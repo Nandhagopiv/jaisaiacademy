@@ -58,7 +58,7 @@ const Jobseeker = () => {
                 expectedSalary: '',
                 resume: null
             })
-            const response = await axios.post('http://localhost:5000/applying', data, {
+            const response = await axios.post('https://jaisaiacademy.onrender.com/applying', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

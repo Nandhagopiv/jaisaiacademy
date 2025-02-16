@@ -12,7 +12,7 @@ const Contact = () => {
 
     const handleSubmit = async(evt) =>{
         evt.preventDefault()
-        axios.post('http://localhost:5000/sendmessage',{name:name,email:email,message:message})
+        axios.post('https://jaisaiacademy.onrender.com/sendmessage',{name:name,email:email,message:message})
         setEmail('')
         setMessage('')
         setName('')

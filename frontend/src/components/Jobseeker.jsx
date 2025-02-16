@@ -58,6 +58,7 @@ const Jobseeker = () => {
                 expectedSalary: '',
                 resume: null
             })
+            alert('Application sent successfully...')
             const response = await axios.post('https://jaisaiacademy.onrender.com/applying', data, {
                 headers: {
                     'Content-Type': 'multipart/form-data',

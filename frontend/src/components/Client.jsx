@@ -6,7 +6,7 @@ const Client = () => {
     return (
         <Fragment>
             <Nav home={false} course={false} client={true} seekers={false} contact={false} service={false} />
-            <section className="max-w-6xl m-16 mx-auto p-16 bg-gradient-to-r from-gray-300 via-black-200 to-gray-100 rounded-lg shadow-xl">
+            <section className="md:m-16 p-5 md:p-16 bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 md:rounded-lg shadow-xl">
                 <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">
                     Our Previous Clients
                 </h1>

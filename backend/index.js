@@ -75,7 +75,33 @@ app.post('/applying', upload.single('resume'), async (req, res) => {
   });
 });
 
-// Start the server
+app.post('/sendingmessage',(req,res)=>{
+
+  const {name,email,message} = req.body
+
+  const mailOptions = {
+    from: 'jaisaipvtltd@gmail.com',
+    to: 'nandhagopy@gmail.com',
+    subject: `Message from ${name}`,
+    html: `
+      <p><strong>Name:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Message:</strong> ${message}</p>
+    `
+  };
+
+  // Send email with application details and resume
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    } else {
+      console.log('Email sent:', info.response);
+      res.status(200).send('Application submitted successfully');
+    }
+  });
+})
+
 app.listen(5000, () => {
   console.log('Server started on http://localhost:5000');
 });

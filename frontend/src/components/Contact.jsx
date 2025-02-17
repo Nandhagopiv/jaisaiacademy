@@ -9,14 +9,22 @@ const Contact = () => {
     const[name, setName] = useState('')
     const[email,setEmail] = useState('')
     const[message, setMessage] = useState('')
+    const[isDisabled, setIsDisabled] = useState(false)
 
     const handleSubmit = async(evt) =>{
         evt.preventDefault()
-        axios.post('https://jaisaiacademy.onrender.com/sendmessage',{name:name,email:email,message:message})
+        setIsDisabled(true)
+        const response = await axios.post('http://localhost:5000/sendingmessage',{name:name,email:email,message:message})
+
+        if (response.status === 200) {
+            alert('Message sent successfully...')
+        }else{
+            alert('Network Error 404 or 502... Try Again')
+        }
+        setIsDisabled(false)
         setEmail('')
         setMessage('')
         setName('')
-        alert('Message sent successfully...')
     }
 
     const handleName = (e) =>{
@@ -34,7 +42,7 @@ const Contact = () => {
     return (
         <Fragment>
             <Nav home={false} course={false} client={false} seekers={false} contact={true} service={false} />
-            <section className="min-h-screen bg-gradient-to-r from-gray-300 via-black-200 to-gray-100 py-16">
+            <section className="min-h-screen bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 py-16">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-8">
                         Contact Us
@@ -103,10 +111,12 @@ const Contact = () => {
                             </div>
 
                             <button onClick={handleSubmit}
+                                disabled={isDisabled}
+                                style={{backgroundColor:isDisabled?'rgb(107,114,128)':'rgb(220,38,38)'}}
                                 type="button"
-                                className="w-full p-3 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all duration-300"
+                                className="w-full p-3 text-white font-semibold rounded-lg transition-all duration-300"
                             >
-                                Send Message
+                                {isDisabled?<p>Please Wait</p>:<p>Send Message</p>}
                             </button>
                         </form>
                     </div>

@@ -18,6 +18,8 @@ const Jobseeker = () => {
         expectedSalary: '',
         resume: null,
     });
+    
+    const[isDisabled, setIsDisabled] = useState(false)
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -27,7 +29,7 @@ const Jobseeker = () => {
         });
     };
 
-  
+
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         setFormData({
@@ -46,6 +48,14 @@ const Jobseeker = () => {
         }
 
         try {
+            setIsDisabled(true)
+            const response = await axios.post('http://localhost:5000/applying', data, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+            })
+            setIsDisabled(false)
+            alert('Application sent successfully...')
             setFormData({
                 name: '',
                 email: '',
@@ -58,12 +68,6 @@ const Jobseeker = () => {
                 expectedSalary: '',
                 resume: null
             })
-            alert('Application sent successfully...')
-            const response = await axios.post('https://jaisaiacademy.onrender.com/applying', data, {
-                headers: {
-                    'Content-Type': 'multipart/form-data',
-                },
-            })
             console.log('Form submitted successfully:', response.data);
         } catch (error) {
             console.error('Error submitting form:', error);
@@ -73,7 +77,7 @@ const Jobseeker = () => {
     return (
         <Fragment>
             <Nav home={false} course={false} client={false} seekers={true} contact={false} service={false} />
-            <section className="min-h-screen bg-gradient-to-r from-gray-300 via-black-200 to-gray-100 py-16">
+            <section className="min-h-screen bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 py-16">
                 <div className="max-w-4xl mx-auto px-6 text-center">
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-8">
                         Apply for a Job
@@ -153,7 +157,7 @@ const Jobseeker = () => {
                                     <option value="Web designer">Web designer</option>
                                     <option value="UI/UX Designer">UI/UX Designer</option>
                                     <option value="DevOps engineer">DevOps engineer</option>
-                                    
+
                                 </select>
                             </div>
 
@@ -251,9 +255,11 @@ const Jobseeker = () => {
 
                             <button
                                 type="submit"
-                                className="w-full p-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-all duration-300"
+                                disabled={isDisabled}
+                                style={{backgroundColor:isDisabled?'rgb(107,114,128)':'rgb(220,38,38)'}}
+                                className="w-full p-3 text-white font-semibold rounded-lg transition-all duration-300"
                             >
-                                Submit Application
+                                {isDisabled?<p>Please Wait</p>:<p>Submit Application</p>}
                             </button>
                         </form>
                     </div>

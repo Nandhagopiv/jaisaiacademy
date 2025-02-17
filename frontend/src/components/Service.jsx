@@ -6,7 +6,7 @@ const Service = () => {
     return (
         <Fragment>
             <Nav home={false} course={false} client={false} seekers={false} contact={false} service={true} />
-            <section className="min-h-screen bg-gradient-to-r from-gray-300 via-black-200 to-gray-100 py-16">
+            <section className="min-h-screen bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 py-16">
                 <div className="max-w-6xl mx-auto px-6 text-center">
                     <h1 className="text-4xl sm:text-5xl font-bold text-gray-800 mb-8">
                         Our IT Training Services

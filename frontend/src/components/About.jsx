@@ -6,7 +6,7 @@ const About = () => {
     return (
         <Fragment>
             <Nav home={false} course={true} client={false} seekers={false} contact={false} service={false} />
-            <section className="max-w-4xl m-10 mx-auto p-16 bg-gradient-to-r from-gray-300 via-black-200 to-gray-100 rounded-lg shadow-lg">
+            <section className="md:m-16 p-5 md:p-16 bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 md:rounded-lg shadow-lg">
                 <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-6">
                     About Jaisai Academy
                 </h1>

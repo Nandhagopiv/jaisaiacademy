@@ -3,7 +3,7 @@ import { Fragment } from "react"
 const Footer = () => {
     return (
         <Fragment>
-            <main className="bg-gradient-to-r from-red-700 via-red-500 to-yellow-100 p-14 flex justify-center font-bold text-white">
+            <main className="bg-gradient-to-r from-red-900 to-red-500 p-14 flex justify-center font-bold text-white">
                 <div className="md:w-[50%] md:text-xl flex flex-col gap-5">
                     <h2 className="md:text-4xl text-2xl">Contact Us</h2>
                     <p>

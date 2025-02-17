@@ -8,33 +8,21 @@ const Home = () => {
         <Fragment>
             <Nav home={true} course={false} client={false} seekers={false} contact={false} service={false} />
             <Slider />
-            <section className="bg-white p-3 lg:p-10 text-black md:text-2xl font-bold gap-5 flex-wrap flex justify-center">
-                <div className="border-2 flex-grow basis-1 p-8 flex justify-center text-center flex-shrink-0 items-center border-gray-400 border-dashed">
-                    <div>
-
-                    </div>
+            <section className="bg-white p-3 lg:p-10 text-black md:text-2xl text-xs font-bold gap-3 flex-wrap flex justify-center">
+                <div className="border-2 flex-grow basis-1 p-8 flex rounded-2xl justify-center text-center flex-shrink-0 items-center border-gray-400 border-dashed">
                     <p>12 Active Clients</p>
                 </div>
-                <div className="border-2 flex-grow basis-1 w-[25%] p-8 flex justify-center text-center flex-shrink-0 items-center border-gray-400 border-dashed">
-                    <div>
-
-                    </div>
+                <div className="border-2 flex-grow basis-1 w-[25%] rounded-2xl p-8 flex justify-center text-center flex-shrink-0 items-center border-gray-400 border-dashed">
                     <p>800 Candidates Placed</p>
                 </div>
-                <div className="border-2 flex-grow basis-1 w-[25%] p-8 flex justify-center text-center flex-shrink-0 items-center border-gray-400 border-dashed">
-                    <div>
-
-                    </div>
+                <div className="border-2 flex-grow basis-1 w-[25%] rounded-2xl p-8 flex justify-center text-center flex-shrink-0 items-center border-gray-400 border-dashed">
                     <p>300 Students Trained</p>
                 </div>
-                <div className="p-8 border-2 flex w-[25%] flex-grow basis-1 justify-center text-center flex-shrink-0 border-gray-400 border-dashed items-center">
-                    <div>
-
-                    </div>
+                <div className="p-8 border-2 flex w-[25%] flex-grow rounded-2xl basis-1 justify-center text-center flex-shrink-0 border-gray-400 border-dashed items-center">
                     <p>100 Campus Organized</p>
                 </div>
             </section>
-            <section className="max-w-6xl m-16 mx-auto p-16 bg-gradient-to-r from-gray-300 to-indigo-100 rounded-lg shadow-xl">
+            <section className="max-w-6xl md:m-16 mx-auto p-5 md:p-16 bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 md:rounded-lg shadow-xl">
                 <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">
                     Our Achievements
                 </h1>
@@ -43,7 +31,7 @@ const Home = () => {
                     Below are some of the key achievements that we’ve accomplished.
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                     <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-blue-50 transition-all duration-300">
                         <h3 className="text-xl font-semibold text-blue-600 mb-4">100+ Successful Projects</h3>
                         <p className="text-base text-gray-700 mb-4">

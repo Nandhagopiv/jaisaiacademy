@@ -22,7 +22,7 @@ const Home = () => {
                     <p>100 Campus Organized</p>
                 </div>
             </section>
-            <section className="max-w-6xl md:m-16 mx-auto p-5 md:p-16 bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 md:rounded-lg shadow-xl">
+            <section className="md:m-16 p-5 md:p-16 bg-gradient-to-r from-gray-400 via-gray-200 to-gray-400 md:rounded-lg shadow-xl">
                 <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">
                     Our Achievements
                 </h1>

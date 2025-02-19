@@ -40,7 +40,7 @@ const Nav = (props) => {
     }
     return (
         <Fragment>
-            <main className="w-[100%] shadow bg-gradient-to-r from-red-900 to-red-500 duration-500 text-white lg:px-24 p-5 lg:py-8 sticky top-0 z-20 flex items-center justify-between">
+            <main className="w-[100%] shadow bg-[#0A1E2E] duration-500 text-white lg:px-24 p-5 lg:py-8 sticky top-0 z-20 flex items-center justify-between">
                 <section className="flex flex-row items-center font-bold gap-2">
                     <h2 className="lg:text-4xl text-xl">JAISAI</h2>
                     <h2 className="lg:text-4xl text-xl">Academy</h2>

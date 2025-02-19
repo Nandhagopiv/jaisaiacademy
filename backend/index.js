@@ -33,13 +33,10 @@ const transporter = nodemailer.createTransport({
 
 // Handle job application submissions with file upload
 app.post('/applying', upload.single('resume'), async (req, res) => {
-  // Extract form data
   const { name, email, mobile, jobRole, presentAddress, preferredLocation, willingToRelocate, currentSalary, expectedSalary } = req.body;
   
-  // Extract resume file
   const resume = req.file ? req.file : null;
 
-  // Prepare email content
   const mailOptions = {
     from: 'jaisaipvtltd@gmail.com',
     to: 'nandhagopy@gmail.com',
@@ -63,7 +60,6 @@ app.post('/applying', upload.single('resume'), async (req, res) => {
     ],
   };
 
-  // Send email with application details and resume
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log('Error sending email:', error);

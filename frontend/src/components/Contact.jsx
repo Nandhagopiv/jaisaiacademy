@@ -112,7 +112,7 @@ const Contact = () => {
 
                             <button onClick={handleSubmit}
                                 disabled={isDisabled}
-                                style={{backgroundColor:isDisabled?'rgb(107,114,128)':'rgb(220,38,38)'}}
+                                style={{backgroundColor:isDisabled?'rgb(107,114,128)':'#0A1E2E'}}
                                 type="button"
                                 className="w-full p-3 text-white font-semibold rounded-lg transition-all duration-300"
                             >
